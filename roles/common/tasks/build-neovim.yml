@@ -1,4 +1,12 @@
 ---
+- name: Remove Neovim
+  become: yes
+  package:
+    name:
+      - neovim
+      - tree-sitter
+    state: absent
+
 - name: "Install build pre-requisites for Neovim"
   become: yes
   package:

@@ -1,8 +1,10 @@
 ---
-- name: Remove Cargo (Ubuntu)
+- name: Remove Cargo/rustup
   become: yes
-  apt:
-    name: cargo
+  package:
+    name:
+      - cargo
+      - rustup
     state: absent
 
 - name: Install rustup
