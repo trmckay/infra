@@ -4,6 +4,10 @@ system_packages:
   - gcc
   - make
   - git
+  - rustup
 
 npm_packages:
   - pyright
+
+cargo_packages:
+  - gitui

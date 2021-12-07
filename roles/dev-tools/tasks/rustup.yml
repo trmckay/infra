@@ -1,6 +1,11 @@
 ---
+- name: Remove Cargo (Ubuntu)
+  become: yes
+  apt:
+    name: cargo
+    state: absent
+
 - name: Install rustup
-  become: no
   shell: curl https://sh.rustup.rs -sSf | sh -s -- -y
   args:
     creates: ~/.rustup/settings.toml

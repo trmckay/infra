@@ -2,3 +2,5 @@
 system_packages:
   - pyright
   - rust-analyzer
+  - rustup
+  - gitui

@@ -7,3 +7,6 @@ system_packages:
 
 npm_packages:
   - pyright
+
+cargo_packages:
+  - gitui

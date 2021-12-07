@@ -13,7 +13,6 @@ system_packages:
   - neovim
   - tree-sitter
   - gcc-c++
-  - rustup
   - cargo
   - fd
   - bat
@@ -26,7 +25,6 @@ cargo_deps:
   - make
 
 cargo_packages:
-  - gitui
   - starship
   - zoxide
   - cargo-update

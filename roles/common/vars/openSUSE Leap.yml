@@ -13,12 +13,10 @@ system_packages:
   - neovim
   - tree-sitter
   - gcc-c++
-  - rustup
   - cargo
   - fd
   - bat
   - exa
-  - git-delta
 
 cargo_deps:
   - pkg-config
@@ -26,10 +24,10 @@ cargo_deps:
   - make
 
 cargo_packages:
-  - gitui
   - starship
   - zoxide
   - cargo-update
+  - git-delta
 
 neovim_deps:
   - ninja
@@ -40,3 +38,11 @@ neovim_deps:
   - gcc-c++
   - gettext-tools
   - curl
+
+remove_when_done:
+  - ninja
+  - libtool
+  - autoconf
+  - automake
+  - cmake
+  - gettext-tools

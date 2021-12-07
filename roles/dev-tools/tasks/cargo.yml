@@ -1,0 +1,19 @@
+---
+- name: Install Cargo dependencies
+  become: yes
+  package:
+    name: "{{ cargo_dep }}"
+    state: latest
+  with_items: "{{ cargo_deps }}"
+  loop_control:
+    loop_var: cargo_dep
+
+- name: Build and install Cargo packages
+  become: no
+  shell: 'cargo install --list | grep -q {{ item }} || cargo install {{ cargo_package }}'
+  with_items: "{{ cargo_packages }}"
+  loop_control:
+    loop_var: cargo_package
+
+- name: Update Cargo packages
+  shell: cargo install-update -a

@@ -10,6 +10,7 @@ system_packages:
   - python3
   - g++
   - gcc
+  - cargo
 
 cargo_deps:
   - pkg-config
@@ -22,7 +23,6 @@ cargo_packages:
   - exa
   - fd-find
   - git-delta
-  - gitui
   - starship
   - zoxide
   - cargo-update

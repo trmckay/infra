@@ -1,7 +1,4 @@
 ---
-- name: Install rustup and Cargo
-  include_tasks: rustup.yml
-
 - name: Install packages with Cargo
   include_tasks: cargo.yml
 
