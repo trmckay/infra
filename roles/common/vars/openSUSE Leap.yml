@@ -10,8 +10,6 @@ system_packages:
   - python3
   - gcc
   - git
-  - neovim
-  - tree-sitter
   - gcc-c++
   - cargo
   - fd
