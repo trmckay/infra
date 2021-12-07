@@ -4,6 +4,9 @@
   args:
     executable: /bin/bash
 
+- name: Install rustup
+  include_tasks: rustup.yml
+
 - name: Install packages with Cargo
   include_tasks: cargo.yml
 
