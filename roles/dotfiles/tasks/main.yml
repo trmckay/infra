@@ -1,0 +1,42 @@
+---
+- name: Update packages
+  package:
+    name: '*'
+    state: latest
+    update_cache: yes
+  become: yes
+
+- name: Distro-specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}.yml"
+    - "default.yml"
+
+- name: Install packages
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: latest
+  with_items: "{{ system_packages }}"
+
+- name: Install dotfiles
+  include_tasks: dotfiles.yml
+
+- name: Setup Docker
+  include_tasks: docker.yml
+
+- name: Distro-specific tasks
+  include_tasks: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}.yml"
+    - "default.yml"
+
+- name: Remove unneccessary packages
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: absent
+  with_items: "{{ remove_when_done }}"
+  when: remove_when_done is defined

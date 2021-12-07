@@ -1,0 +1,9 @@
+---
+- name: Install npm packages
+  become: yes
+  npm:
+    name: "{{ npm_package }}"
+    global: yes
+  with_items: "{{ npm_packages }}"
+  loop_control:
+    loop_var: npm_package

@@ -1,0 +1,23 @@
+- name: Add flathub remote
+  become: "{{ flatpak_needs_root }}"
+  shell: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+- name: Install flatpak applications
+  become: "{{ flatpak_needs_root }}"
+  community.general.flatpak:
+    name:
+      - com.bitwarden.desktop
+      - com.calibre_ebook.calibre
+      - com.discordapp.Discord
+      - com.github.tchx84.Flatseal
+      - com.nextcloud.desktopclient.nextcloud
+      - com.obsproject.Studio
+      - com.slack.Slack
+      - com.spotify.Client
+      - im.riot.Riot
+      - md.obsidian.Obsidian
+      - org.chromium.Chromium
+      - org.telegram.desktop
+      - com.calibre_ebook.calibre
+    state: present
+    remote: flathub

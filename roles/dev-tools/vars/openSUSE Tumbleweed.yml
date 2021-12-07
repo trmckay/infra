@@ -1,0 +1,9 @@
+---
+system_packages:
+  - npm
+  - gcc
+  - make
+  - git
+
+npm_packages:
+  - pyright

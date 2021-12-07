@@ -1,0 +1,63 @@
+---
+- name: "Install build pre-requisites for Neovim"
+  become: yes
+  package:
+    name: "{{ neovim_dep }}"
+    state: latest
+  with_items: "{{ neovim_deps }}"
+  loop_control:
+    loop_var: neovim_dep
+
+- name: "Clone Neovim repository"
+  become: yes
+  git:
+    repo: https://github.com/neovim/neovim.git
+    dest: /src/neovim
+    clone: yes
+    update: yes
+    version: release-0.6
+
+- name: "Build Neovim"
+  become: yes
+  command:
+    cmd: "make CMAKE_BUILD_TYPE=Release"
+    chdir: "/src/neovim"
+
+- name: "Install Neovim"
+  become: yes
+  command:
+    cmd: "make install"
+    chdir: "/src/neovim"
+
+- name: "Cleanup Neovim source"
+  become: yes
+  file:
+    path: /src/neovim
+    state: absent
+
+- name: "Clone tree-sitter repository"
+  become: yes
+  git:
+    repo: https://github.com/tree-sitter/tree-sitter.git
+    dest: /src/tree-sitter
+    clone: yes
+    update: yes
+    version: master
+
+- name: "Build tree-sitter"
+  become: yes
+  command:
+    cmd: "make"
+    chdir: "/src/tree-sitter"
+
+- name: "Install tree-sitter"
+  become: yes
+  command:
+    cmd: "make install"
+    chdir: "/src/tree-sitter"
+
+- name: "Cleanup tree-sitter source"
+  become: yes
+  file:
+    path: /src/tree-sitter
+    state: absent

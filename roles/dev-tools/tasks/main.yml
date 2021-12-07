@@ -1,0 +1,21 @@
+---
+- name: Distro-specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}.yml"
+    - "default.yml"
+
+- name: Install packages
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: latest
+  with_items: "{{ system_packages }}"
+
+- name: Distro-specific tasks
+  include_tasks: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}.yml"
+    - "default.yml"

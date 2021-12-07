@@ -1,0 +1,53 @@
+---
+system_packages:
+  - ranger
+  - ripgrep
+  - tmux
+  - zsh
+  - curl
+  - git
+  - fzf
+  - python3
+  - g++
+  - gcc
+
+cargo_deps:
+  - pkg-config
+  - build-essential
+  - pkg-config
+  - libssl-dev
+
+cargo_packages:
+  - bat
+  - exa
+  - fd-find
+  - git-delta
+  - gitui
+  - starship
+  - zoxide
+  - cargo-update
+
+neovim_deps:
+  - ninja-build
+  - gettext
+  - libtool
+  - libtool-bin
+  - autoconf
+  - automake
+  - cmake
+  - g++
+  - pkg-config
+  - unzip
+  - curl
+  - doxygen
+  - git
+
+remove_when_done:
+  - ninja-build
+  - gettext
+  - libtool
+  - libtool-bin
+  - autoconf
+  - automake
+  - cmake
+  - doxygen
