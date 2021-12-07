@@ -1,0 +1,16 @@
+- name: Clone yay repository
+  git:
+    repo: https://aur.archlinux.org/yay.git
+    dest: ~/yay
+    clone: yes
+    update: yes
+
+- name: Install yay
+  command:
+    cmd: "makepkg -si --noconfirm"
+    chdir: "~/yay"
+
+- name: Cleanup yay source
+  file:
+    path: ~/yay
+    state: absent

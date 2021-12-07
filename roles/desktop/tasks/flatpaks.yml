@@ -1,3 +1,9 @@
+- name: Install flatpak
+  package:
+    name:
+      - flatpak
+    state: latest
+
 - name: Add flathub remote
   become: "{{ flatpak_needs_root }}"
   shell: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo

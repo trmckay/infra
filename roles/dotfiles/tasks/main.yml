@@ -1,10 +1,8 @@
 ---
-- name: Update packages
-  package:
-    name: '*'
-    state: latest
-    update_cache: yes
+- name: Update repositories
   become: yes
+  package:
+    update_cache: yes
 
 - name: Distro-specific variables
   include_vars: "{{ item }}"
@@ -23,8 +21,8 @@
 - name: Install dotfiles
   include_tasks: dotfiles.yml
 
-- name: Setup Docker
-  include_tasks: docker.yml
+- name: Install zsh plugins
+  command: zsh -ic 'exit'
 
 - name: Distro-specific tasks
   include_tasks: "{{ item }}"

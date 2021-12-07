@@ -1,0 +1,22 @@
+---
+system_packages:
+  - grep
+  - ranger
+  - ripgrep
+  - tmux
+  - zsh
+  - curl
+  - fzf
+  - python3
+  - gcc
+  - git
+  - neovim
+  - rustup
+  - base-devel
+  - bat
+  - exa
+  - fd
+  - git-delta
+  - gitui
+  - starship
+  - zoxide
