@@ -1,0 +1,6 @@
+---
+- name: Disable packagekit
+  service:
+    name: packagekit
+    enabled: no
+    state: stopped
