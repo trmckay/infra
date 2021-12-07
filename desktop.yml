@@ -3,4 +3,4 @@
   roles:
     - role: dotfiles
     - role: dev-tools
-    - role: desktop
+    - role: common

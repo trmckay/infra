@@ -1,0 +1,11 @@
+---
+- name: Add /usr/sbin to PATH
+  shell: "grep -q /usr/sbin ~/.local.zsh || echo 'export PATH=$PATH:/usr/sbin' >> ~/.local.zsh"
+  args:
+    executable: /bin/bash
+
+- name: Install packages with Cargo
+  include_tasks: cargo.yml
+
+- name: Build Neovim from source
+  include_tasks: build-neovim.yml

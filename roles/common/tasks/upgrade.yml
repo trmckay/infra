@@ -1,0 +1,24 @@
+---
+- name: Update repositories and upgrade packages (Ubuntu)
+  become: yes
+  apt:
+    name: '*'
+    state: latest
+    update_cache: yes
+  when: ansible_distribution == "Ubuntu"
+
+- name: Update repositories and upgrade packages (openSUSE)
+  become: yes
+  zypper:
+    name: '*'
+    state: latest
+    update_cache: yes
+  when: ansible_os_family == "Suse"
+
+- name: Update repositories and upgrade packages (Arch)
+  become: yes
+  pacman:
+    name: '*'
+    state: latest
+    update_cache: yes
+  when: ansible_distribution == "Arch"

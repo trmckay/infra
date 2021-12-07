@@ -1,0 +1,42 @@
+---
+system_packages:
+  - grep
+  - ranger
+  - ripgrep
+  - tmux
+  - zsh
+  - curl
+  - fzf
+  - python3
+  - gcc
+  - git
+  - neovim
+  - tree-sitter
+  - gcc-c++
+  - rustup
+  - cargo
+  - fd
+  - bat
+  - exa
+  - git-delta
+
+cargo_deps:
+  - pkg-config
+  - libopenssl-devel
+  - make
+
+cargo_packages:
+  - gitui
+  - starship
+  - zoxide
+  - cargo-update
+
+neovim_deps:
+  - ninja
+  - libtool
+  - autoconf
+  - automake
+  - cmake
+  - gcc-c++
+  - gettext-tools
+  - curl
