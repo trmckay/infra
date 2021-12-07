@@ -11,3 +11,6 @@
 
 - name: Setup flatpaks
   include_tasks: flatpaks.yml
+
+- name: Setup fonts
+  include_tasks: fonts.yml

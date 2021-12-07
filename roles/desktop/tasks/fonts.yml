@@ -1,0 +1,21 @@
+---
+- name: Create .fonts directory
+  file:
+    path: ~/.fonts
+    state: directory
+
+- name: Download FiraCode Nerd Font archive
+  get_url:
+    url: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
+    dest: ~/.fonts/FiraCode.zip
+    mode: 0660
+
+- name: Install FiraCode Nerd Font
+  shell: unzip FiraCode.zip
+  args:
+    chdir: ~/.fonts
+
+- name: Remove FiraCode Nerd Font archive
+  file:
+    path: ~/.fonts/FiraCode.zip
+    state: absent
