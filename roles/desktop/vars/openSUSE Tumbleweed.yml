@@ -1,2 +1,6 @@
 ---
 flatpak_needs_root: yes
+
+system_packages:
+  - kitty
+  - flameshot

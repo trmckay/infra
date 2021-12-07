@@ -15,16 +15,17 @@ system_packages:
   - gcc-c++
   - rustup
   - cargo
+  - fd
+  - bat
+  - exa
+  - git-delta
 
 cargo_deps:
   - pkg-config
   - libopenssl-devel
+  - make
 
 cargo_packages:
-  - bat
-  - exa
-  - fd-find
-  - git-delta
   - gitui
   - starship
   - zoxide

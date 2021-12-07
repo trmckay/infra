@@ -6,6 +6,16 @@
     - "{{ ansible_os_family }}.yml"
     - "default.yml"
 
+- name: Install Ansible community collections
+  shell: "ansible-galaxy collection install community.general"
+
+- name: Install packages
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: latest
+  with_items: "{{ system_packages }}"
+
 - name: Setup virtualization
   include_tasks: virtualization.yml
 

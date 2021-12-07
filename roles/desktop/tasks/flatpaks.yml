@@ -1,4 +1,5 @@
 - name: Install flatpak
+  become: yes
   package:
     name:
       - flatpak

@@ -1,9 +1,4 @@
 ---
-- name: Update repositories
-  become: yes
-  package:
-    update_cache: yes
-
 - name: Distro-specific variables
   include_vars: "{{ item }}"
   with_first_found:
