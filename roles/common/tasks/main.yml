@@ -36,6 +36,3 @@
     state: absent
   with_items: "{{ remove_when_done }}"
   when: remove_when_done is defined
-
-- name: Apply KDE configuration
-  include_tasks: kde.yml
