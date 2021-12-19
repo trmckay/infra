@@ -3,6 +3,16 @@
     repo: https://github.com/trmckay/dotfiles.git
     dest: ~/.dotfiles
     clone: yes
+    update: no
+    remote: https
+
+- name: "Configure dotfiles remote"
+  git:
+    repo: git@github.com:trmckay/dotfiles.git
+    remote: origin
+    dest: ~/.dotfiles
+    clone: no
+    update: no
 
 - name: "Link dotfiles"
   command:

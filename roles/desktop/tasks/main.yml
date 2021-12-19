@@ -24,3 +24,6 @@
 
 - name: Setup fonts
   include_tasks: fonts.yml
+
+- name: Setup Visual Studio Code
+  include_tasks: vscode.yml

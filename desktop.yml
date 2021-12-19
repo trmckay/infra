@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
   roles:
-    - role: dotfiles
-    - role: dev-tools
     - role: common
+    - role: dev-tools
+    - role: desktop

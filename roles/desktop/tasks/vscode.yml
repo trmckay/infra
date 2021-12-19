@@ -1,0 +1,19 @@
+---
+- name: Import RPM key (openSUSE)
+  become: yes
+  rpm_key:
+    key: https://packages.microsoft.com/keys/microsoft.asc
+    state: present
+
+- name: Add Visual Studio Code repo (openSUSE)
+  become: yes
+  zypper_repository:
+    name: vscode
+    repo: https://packages.microsoft.com/yumrepos/vscode
+    state: present
+
+- name: Install Visual Studio Code
+  become: yes
+  package:
+    name: code-insiders
+    state: latest

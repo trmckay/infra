@@ -14,17 +14,14 @@
   community.general.flatpak:
     name:
       - com.bitwarden.desktop
-      - com.calibre_ebook.calibre
       - com.discordapp.Discord
       - com.github.tchx84.Flatseal
       - com.nextcloud.desktopclient.nextcloud
       - com.obsproject.Studio
-      - com.slack.Slack
       - com.spotify.Client
       - im.riot.Riot
       - md.obsidian.Obsidian
       - org.chromium.Chromium
       - org.telegram.desktop
-      - com.calibre_ebook.calibre
     state: present
     remote: flathub
