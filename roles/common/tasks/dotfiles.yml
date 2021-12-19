@@ -33,6 +33,11 @@
     executable: /bin/bash
     creates: ~/.local/share/nvim/site/autoload/plug.vim
 
+- name: Install Neovim plugins
+  shell: "env NVIM_PREFIX=$HOME/.config/nvim NVIM_DISABLE_LOAD_CFG=1 nvim -c 'PlugInstall | qa!'"
+  args:
+    executable: /bin/bash
+
 - name: Change shell to zsh
   become: yes
   user:

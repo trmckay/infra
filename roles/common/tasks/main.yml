@@ -29,9 +29,6 @@
     - "{{ ansible_os_family }}.yml"
     - "default.yml"
 
-- name: Install Neovim plugins
-  shell: env NVIM_DISABLE_LOAD_CFG=1 nvim -c 'PlugInstall | qa!'
-
 - name: Remove unneccessary packages
   become: yes
   package:
@@ -39,3 +36,6 @@
     state: absent
   with_items: "{{ remove_when_done }}"
   when: remove_when_done is defined
+
+- name: Apply KDE configuration
+  include_tasks: kde.yml
