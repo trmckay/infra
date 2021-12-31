@@ -10,7 +10,6 @@ system_packages:
   - python3
   - g++
   - gcc
-  - cargo
 
 cargo_deps:
   - pkg-config

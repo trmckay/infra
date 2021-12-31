@@ -1,4 +1,10 @@
 ---
+- name: Install Rust
+  shell: curl https://sh.rustup.rs -sSf | sh -s -- -y
+  args:
+    creates: "~/.cargo/bin/rustup"
+    executable: /bin/bash
+
 - name: Install Cargo dependencies
   become: yes
   package:
