@@ -1,8 +1,15 @@
 ---
 - name: Install konsave
+  become: yes
   pip:
     name: konsave
     state: latest
 
 - name: Apply KDE config
   shell: konsave -i files/kde.knsv && konsave -a kde
+
+- name: Copy SSH agent script to autostart directory
+  copy:
+    src: ./files/kde-ssh-add.sh
+    dest: ~/.config/autostart-scripts/kde-ssh-add.sh
+    mode: '0775'

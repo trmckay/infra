@@ -1,11 +1,8 @@
 ---
-- name: Disable packagekit
-  service:
-    name: packagekit
-    enabled: no
-    state: stopped
-
-- name: Enable Packman repository
-  zypper_repo:
-    repo: http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/
-    state: present
+- name: Remove PackageKit
+  become: yes
+  zypper:
+    name:
+      - PackageKit
+      - discover
+    state: absent
