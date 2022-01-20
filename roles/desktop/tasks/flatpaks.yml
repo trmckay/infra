@@ -17,20 +17,16 @@
       - com.calibre_ebook.calibre
       - com.discordapp.Discord
       - com.github.johnfactotum.Foliate
-      - com.github.liferooter.textpieces
       - com.github.tchx84.Flatseal
       - com.nextcloud.desktopclient.nextcloud
       - com.obsproject.Studio
       - com.spotify.Client
-      - com.uploadedlobster.peek
       - de.haeckerfelix.Shortwave
       - im.riot.Riot
       - md.obsidian.Obsidian
       - org.blender.Blender
-      - org.chromium.Chromium
       - org.gimp.GIMP
       - org.inkscape.Inkscape
-      - org.kde.kdenlive
       - org.telegram.desktop
     state: present
     remote: flathub

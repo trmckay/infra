@@ -1,0 +1,28 @@
+---
+system_packages:
+  - grep
+  - ranger
+  - ripgrep
+  - tmux
+  - zsh
+  - curl
+  - fzf
+  - python3
+  - gcc
+  - git
+  - neovim
+  - gcc-c++
+  - fd-find
+  - bat
+  - exa
+  - git-delta
+  - zoxide
+  - starship
+
+cargo_deps:
+  - pkg-config
+  - openssl-devel
+  - make
+
+cargo_packages:
+  - cargo-update

@@ -1,0 +1,12 @@
+---
+system_packages:
+  - npm
+  - gcc
+  - make
+  - git
+
+npm_packages:
+  - pyright
+
+cargo_packages:
+  - gitui
