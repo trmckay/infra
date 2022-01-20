@@ -1,6 +1,4 @@
 ---
 - hosts: localhost
   roles:
-    - role: common
-    - role: dev-tools
     - role: desktop

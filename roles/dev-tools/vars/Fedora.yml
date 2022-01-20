@@ -4,9 +4,9 @@ system_packages:
   - gcc
   - make
   - git
+  - gitui
 
 npm_packages:
   - pyright
 
 cargo_packages:
-  - gitui

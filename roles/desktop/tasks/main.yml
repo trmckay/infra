@@ -24,12 +24,3 @@
 
 - name: Setup fonts
   include_tasks: fonts.yml
-
-- name: Setup icons
-  include_tasks: icons.yml
-
-    # - name: Setup Visual Studio Code
-    # include_tasks: vscode.yml
-    #
-    # - name: Apply KDE configuration
-    # include_tasks: kde.yml

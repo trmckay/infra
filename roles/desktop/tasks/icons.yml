@@ -1,7 +1,0 @@
----
-- name: Install Papirus icons (openSUSE)
-  become: yes
-  zypper:
-    name: papirus-icon-theme
-    state: latest
-  when: ansible_os_family == "Suse"

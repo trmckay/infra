@@ -1,7 +1,3 @@
----
-- name: Install rustup
-  include_tasks: rustup.yml
-
 - name: Install packages with npm
   include_tasks: npm.yml
 
