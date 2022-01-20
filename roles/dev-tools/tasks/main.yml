@@ -13,9 +13,6 @@
     state: latest
   with_items: "{{ system_packages }}"
 
-- name: Setup Docker
-  include_tasks: docker.yml
-
 - name: Distro-specific tasks
   include_tasks: "{{ item }}"
   with_first_found:

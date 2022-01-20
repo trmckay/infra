@@ -16,7 +16,7 @@
 
 - name: Build and install Cargo packages
   become: no
-  shell: 'cargo install --list | grep -q {{ item }} || cargo install {{ cargo_package }}'
+  shell: 'source ~/.cargo/env; cargo install --list | grep -q {{ item }} || cargo install {{ cargo_package }}'
   with_items: "{{ cargo_packages }}"
   loop_control:
     loop_var: cargo_package
