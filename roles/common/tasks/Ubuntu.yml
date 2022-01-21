@@ -1,6 +1,3 @@
 ---
-- name: Install packages with Cargo
-  include_tasks: cargo.yml
-
 - name: Build Neovim from source
   include_tasks: build-neovim.yml

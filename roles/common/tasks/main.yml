@@ -16,6 +16,9 @@
     state: latest
   with_items: "{{ system_packages }}"
 
+- name: Install packages with Cargo
+  include_tasks: cargo.yml
+
 - name: Install dotfiles
   include_tasks: dotfiles.yml
 
